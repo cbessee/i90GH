@@ -17,52 +17,109 @@
   }
 }
 
-.title-bar-title {
-  a {
-    font-size: 1rem;
-    color: #B9B9B9;
-  }
+.title-bar {
+    background-color: $primary-color;
+    font-size: 1.5rem;
+    button {
+        color: $dark-gray !important;
+    }
+    .title-bar-title {
+      float: right;
+      a {
+        font-size: 1.5rem;
+        color: $secondary-color;
+      }
+    }
+}
+
+
+#masthead {
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 /* Tablet and desktop menu */
 .top-bar {
+  text-align: center;
+  background-color: $primary-color !important;
 
-  .menu .home a {
-    font-size: 1rem;
-    color: #B9B9B9;
-  }
+  .top-bar-nav {
+    display: inline-block;
 
-  .menu a {
-    height: 45px;
-    line-height: 45px;
-    color: #e6e6e6;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-weight: bold;
-    font-size: 0.8rem;
-    line-height: 1;
+    ul {
+      background-color: $primary-color;
+      width: auto;
+      margin: auto;
+      text-align: center;
+    }
 
-    &:hover:not(.button) {
-      background-color: #2a2a2a;
+    @include breakpoint(medium) {
+      margin: 0.25rem 0rem;
     }
   }
 
+  .menu .home a {
+    font-size: 2rem;
+    color: $secondary-color;
+  }
+
+  .menu a {
+    color: $white;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    &:hover {
+        text-decoration: underline;
+        -webkit-text-decoration-color: $secondary-color;
+        -moz-text-decoration-color: $secondary-color;
+        text-decoration-color: $secondary-color;
+    }
+  }
+
+  .menu li {
+    position: relative;
+  }
+
   .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu li:not(:first-child) { 
+    @include breakpoint(medium) {
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 18px;
+            left: 0px;
+            bottom: 8px;
+            width: 1px;
+            height: 20px;
+            background: $white;
+        }
+    }
+
+  }
 
   .dropdown.menu .submenu {
-    background-color: #121212;
-    color: #e6e6e6;
+    background-color: rgb(246, 245, 247);
+    color: $primary-color;
     border: 0;
+    a {
+        font-size: 1rem;
+    }
   }
 
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
-  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
 
   .dropdown.menu:first-child >
     li.is-dropdown-submenu-parent >
     a::after {
       display: none;
+    }
+
+    .menu .active > a {
+        background-color: $primary-color;
+        color: $secondary-color;
     }
 
 }

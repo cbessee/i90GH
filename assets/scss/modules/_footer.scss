@@ -4,10 +4,34 @@
 	margin: 0 auto;
 	border-top: 1px solid #ccc;
 	margin-top: rem-calc(60);
+    background-color: $primary-color;
 
 	#footer {
 		@include grid-row();
 		padding: rem-calc(30) 0;
+        color: $white;
+        
+        h4{
+            color: $secondary-color;
+        }
+
+        .social-menu a {
+            font-size: 1.5rem;
+            padding-left: 0;
+        }
+
+        .disclaimer {
+            margin-top: 1rem;
+
+            @include breakpoint(large) {
+                margin-top: 0rem;
+            }
+        }
+
+        a {
+            color: $white;
+            margin-bottom: 1rem;
+        }
 
 		ul {
 			list-style-type: none;

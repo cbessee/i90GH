@@ -2,6 +2,11 @@
   @include grid-row();
   margin-top: 3rem;
 
+  .entry-title {
+    color: $secondary-color;
+    text-transform: uppercase;
+  }
+
   .main-content {
     @include breakpoint(small) {
       @include grid-column(12);

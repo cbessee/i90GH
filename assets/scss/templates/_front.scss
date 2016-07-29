@@ -1,211 +1,124 @@
 // Page header
-#front-hero {
-	.marketing {
-		@include grid-row();
-		max-width: 55rem;
-	}
+.home-page {
+    #front-hero {
+        background: url('../images/hero.jpg') center;
+        background-size: cover;
+        background-position: center 20%;
+        margin: 0 0 rem-calc(18) 0;
+        height: auto;
+        position: relative;
+        @include breakpoint(medium) {
+            padding: rem-calc(160%) 0;
+        }
+        @include breakpoint(small) {
+            padding: rem-calc(80%) 0;
+        }
+    }
 
-	@include breakpoint(small) {
-		background: url('../images/demo/hero-bg-foundation-6-small.svg') bottom center;
-		background-size: cover;
-		background-position: bottom;
-		padding: rem-calc(65%) 0;
-		margin: 0 0 rem-calc(32);
-		height: auto;
-		position: relative;
-		text-align: left;
-	}
+    .marketing {
+        @include grid-row();
+        max-width: 70rem;
+        .logo {
+            width: 5rem;
+        }
+    }
 
-	@include breakpoint(medium) {
-		background: url('../images/demo/hero-bg-foundation-6-large.svg') bottom center;
-		background-size: cover;
-		background-position: center;
-		height: rem-calc(685);
-		margin: 0 0 rem-calc(72);
-	}
+    .tagline {
+        text-shadow: 1px 1px $light-gray;
+        text-align: center;
+        padding-top: 1rem;
 
-	#watch {
+        h2 {
+            color: $secondary-color;
+            font-weight: 500;
+        }
 
-		@include breakpoint(small) {
-			@include grid-column(7);
-			@include grid-column-position(-5);
-		}
+    }
 
-		@include breakpoint(medium) {
-			@include grid-column(12);
-			@include grid-column-position(0);
-		}
+    // Section divider
+    .section-divider {
+        @include grid-row();
 
-		section {
-			display: inline;
-		}
+        hr {
+            @include grid-column(12);
+            box-sizing: border-box;
+        }
+    }
 
-		a {
-			color: #B4C9D1;
-			cursor: pointer;
-			font-weight: 400;
-			margin-right: rem-calc(20);
-		}
+    .sub-teasers {
 
-		a:hover {
-			color: #fff;
-		}
+        .teaser-contain {
+            float: left;
+            @include breakpoint(medium) {
+                width: 50%;
+                margin: 1.5rem 0;
+            }
+            @include breakpoint(small) {
+                width: 100%;
+            }
+            position: relative;
+            .teaser-link {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 60%;
+                padding: 1rem;
+                text-transform: uppercase;
+                @include breakpoint(large) {
+                    font-size: 2rem;
+                    top: 40%;
+                }
+                @include breakpoint(small) {
+                    font-size: 1.5rem;
+                    top: 40%;
+                }
+                color: $white;
+                text-align: center;
+                border: 2px solid $white;
+            }
+        }
 
-		#stargazers {
-			:before {
-				content: "\f09b";
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-decoration: inherit;
-				color: #B4C9D1;
-				margin-right: rem-calc(8);
-			}
-		}
+        .teaser {
+            margin: 0px !important;
+            &:before {
+                background: rgba(0, 0, 0, 0.65);
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: all .3s linear;
+            }
 
-		#twitter {
-			:before {
-				content: "\f099";
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-decoration: inherit;
-				color: #B4C9D1;
-				margin-right: rem-calc(8);
-			}
-		}
+        }
+    }
 
-	}
-
-	.tagline {
-
-		@include breakpoint(small) {
-			@include grid-column(8);
-		}
-
-		@include breakpoint(medium) {
-			@include grid-column(5);
-			padding-top: 6rem;
-		}
-
-	}
-
-	h1 {
-		color: #fff;
-		font-weight: 500;
-
-		@include breakpoint(small) {
-			font-size: 2.2rem;
-		}
-
-		@include breakpoint(medium) {
-			font-size: 2.875rem;
-		}
-
-	}
-
-	h4 {
-		color: #fefefe;
-		font-weight: 300;
-		font-size: 1.3125rem;
-	}
-
-	.download { margin-top: rem-calc(20); }
-
-}
-
-// Intro
-.intro {
-	@include grid-row();
-
-	.fp-intro {
-
-		@include breakpoint(small) {
-			@include grid-column(12);
-		}
-
-		@include breakpoint(medium) {
-			@include grid-column(10);
-			@include grid-column-offset(1);
-
-			h2 {
-				font-weight: 300;
-				margin-bottom: 1.5rem;
-			}
-
-			h4 {
-				font-size: 1.125rem;
-				line-height: 1.6;
-				color: #777;
-				margin-bottom: 2rem;
-			}
-
-		}
-	}
-}
-
-// Section divider
-.section-divider {
-	@include grid-row();
-
-	hr {
-		@include grid-column(12);
-		@extend .dotted;
-		box-sizing: border-box;
-	}
-}
-
-
-// Benefits
-.benefits {
-	@include grid-row();
-	text-align: center;
-
-	header {
-		@include grid-column(12);
-
-		h2 {
-			font-weight: 300;
-		}
-
-		h4 {
-			font-size: 1.125rem;
-			line-height: 1.6;
-			color: #777;
-		}
-	}
-
-	.semantic,
-	.responsive,
-	.customizable,
-	.professional {
-		@include breakpoint(small) {
-			@include grid-column(12);
-		}
-
-		@include breakpoint(medium) {
-			@include grid-column(3);
-		}
-
-		img {
-			padding: 1.25rem;
-    	margin: 1rem auto 0 auto;
-		}
-
-		h3 {
-			color: #0a0a0a;
-			font-weight: 300;
-			font-size: 1.75rem;
-		}
-
-		p { font-size: 0.9375rem; }
-
-	}
-
-	.why-foundation {
-		@include grid-row();
-		@include grid-column(12);
-		margin-top: 4rem;
-	}
+    .best-sellers {
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            color: $secondary-color;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .featured-product {
+            @include grid-row();
+            .product-info {
+                text-align: center;
+                .product-meta {
+                    list-style-type: none;
+                    padding: 1rem 0rem;
+                    margin: 0;
+                }
+            }
+            .description {
+            }
+        }
+    }
 
 }
