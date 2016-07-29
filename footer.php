@@ -24,6 +24,9 @@
 
                         <a href="https://www.google.com/maps/place/1604+Smittys+Blvd,+Ritzville,+WA+99169/@47.1189022,-118.366313,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x549ede614f78651b:0x77f99437fe97e33!2sCow+Creek+Mercantile!8m2!3d47.1195821!4d-118.3632726!3m4!1s0x549ede614f82a265:0x6b86a1fc783bec51!8m2!3d47.1191205!4d-118.3640554" target="_blank"><i class="fa fa-map"></i> Get Directions</a>
 
+                        <br>
+                        <a href="<?php echo wp_login_url(); ?>">Staff Login</a>
+
                     </div>
                     <div class="social medium-6 large-3 columns">
                         <h4>Get Connected</h4>

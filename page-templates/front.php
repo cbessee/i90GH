@@ -52,6 +52,8 @@ get_header(); ?>
                     $wp_query->the_post();
                     get_template_part( 'template-parts/featured_product' );
                 }
+            } else {
+                echo '<p style="text-align:center; font-size: 1.5rem;">Coming Soon!</p>';
             }
         ?>
     </div>
